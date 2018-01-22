@@ -1,0 +1,219 @@
+/* ---------- Dialog ---------- */
+
+.xxDialog {
+    display: none;
+    position: fixed;
+    _position: absolute;
+    top: 25%;
+    _top: expression((document.documentElement.scrollTop || document.body.scrollTop) + Math.round(25 * (document.documentElement.offsetHeight || document.body.clientHeight) / 100) + 'px');
+    left: 50%;
+    z-index: 100;
+    overflow: hidden;
+    -webkit-box-shadow: 1px 1px 6px #999999;
+    -moz-box-shadow: 1px 1px 6px #999999;
+    box-shadow: 1px 1px 6px #999999;
+    *filter: none;
+    border: 1px solid #d5d5d5;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.xxDialog .dialogTitle {
+    padding-left: 10px;
+    height: 40px;
+    line-height: 40px;
+    color: #000;
+    background: #fff;
+    border-bottom: 1px solid #f2f2f2;
+    font-weight: bold;
+    cursor: move;
+}
+
+.xxDialog .dialogContent {
+    max-height: 330px;
+    _height: 330px;
+    overflow-y: auto;
+}
+
+div.xxDialog.large .dialogContent {
+    max-height: 550px;
+    _height: 550px;
+}
+
+.xxDialog .dialogClose {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin-top: 10px;
+    background: url(../images/overlay_close.png);
+}
+
+.xxDialog .dialogClose:hover {
+    background: url(../images/overlay_close_click.png);
+}
+
+.xxDialog .dialogwarnIcon {
+    line-height: 24px;
+    padding-left: 30px;
+    margin: 50px 60px 40px 60px;
+    background: url(../images/common.gif) -60px -360px no-repeat;
+}
+
+.xxDialog .dialogsuccessIcon {
+    line-height: 24px;
+    padding-left: 30px;
+    margin: 50px 0px 40px 60px;
+    background: url(../images/common.gif) -30px -390px no-repeat;
+}
+
+.xxDialog .dialogerrorIcon {
+    line-height: 24px;
+    padding-left: 30px;
+    margin: 50px 0px 40px 60px;
+    background: url(../images/common.gif) 0px -420px no-repeat;
+}
+
+.xxDialog .dialogBottom {
+    border-top: 1px solid #f2f2f2;
+    padding: 10px;
+    text-align: center;
+}
+
+.xxDialog .dialogIframe {
+    width: 2000px;
+    height: 2000px;
+    position: absolute;
+    left: -100px;
+    top: -100px;
+    z-index: -1;
+}
+
+.xxDialog .dialogTable {
+    width: 100%;
+}
+
+.xxDialog .dialogTable th,
+.xxDialog .dialogTable td {
+    padding: 5px;
+}
+.xxDialog .dialogTable th {
+    text-align: right;
+}
+
+.xxDialog .dialogTable input,
+.xxDialog .dialogTable select {
+    width: 160px;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 5px;
+    border: 1px #d9d9d9 solid;
+}
+
+div.xxDialog .fieldSet select {
+    margin-bottom: 5px;
+    display: block;
+}
+
+.xxDialog .dialogContent {
+    max-height: none;
+}
+
+/* searchGroup */
+.searchGroup {
+    vertical-align: top;
+}
+
+.selectGroup {
+    display: inline-block;
+}
+
+.select.searchParams {
+}
+
+.searchGroup #keyword {
+}
+
+.searchButton {
+}
+/*totalContainer*/
+.totalContainer,
+.pickedContainer,
+.extendActionContainer {
+    width: 450px;
+    float: left;
+    height: 300px;
+    overflow-y: scroll;
+    padding: 5px;
+}
+
+.totalTable,
+.pickedTable {
+    margin-top: 10px;
+    width: 100%;
+    border: 1px solid #eee;
+}
+
+.totalTable tr,
+.pickedTable tr {
+    border-bottom: 1px solid #eee;
+    line-height: 25px;
+    text-align: left;
+}
+
+.totalTable tr.checked,
+.pickedTable tr.checked {
+    background: #999999;
+    color: #fff;
+}
+
+.totalTable td,
+.pickedTable td,
+.totalTable th,
+.pickedTable th {
+    padding: 0 9px;
+    white-space: pre-line;
+    cursor: default;
+    max-width: 116px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.totalTable th,
+.pickedTable th {
+    line-height: 30px;
+    background: #eee;
+}
+/*pickedContainer*/
+.pickedContainer {
+    float: right;
+}
+
+.pickedTable {
+}
+
+.pickedTable tr {
+}
+/*handleContainer*/
+.handleContainer {
+    width: 100px;
+    float: left;
+    vertical-align: middle;
+    text-align: center;
+    padding: 40px 7px;
+}
+
+.handleContainer button {
+    width: 58px;
+    height: 33px;
+    margin-top: 11px;
+    margin-right: 0;
+    font-size: 12px;
+}
+
+.extendActionContainer {
+    width: 150px;
+    overflow-y: auto;
+}
