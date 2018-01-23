@@ -1,5 +1,18 @@
 /* ---------- Dialog ---------- */
-
+.dialog-overlay {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    filter: alpha(opacity=30);
+    -moz-opacity: 0.3;
+    opacity: 0.3;
+    zoom: 1;
+    background: url(../images/dialog_overlay.png);
+}
 .xxDialog {
     display: none;
     position: fixed;

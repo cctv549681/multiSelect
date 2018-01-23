@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="./src/css/jquery.multiSelect.css" rel="stylesheet" type="text/css" />
+    <style>
+        .searchGroup {
+            padding: 5px 16px;
+            background-color: #FFF;
+            border-bottom: 1px solid #DDD
+        }
+
+        .searchButton {
+            width: 22px;
+            height: 22px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+
+        .searchGroup input.text,
+        .searchGroup select.text {
+            width: 130px;
+            font-size: 14px;
+            margin-bottom: 5px
+        }
+
+        .searchGroup select.text {
+            width: 108px;
+            height: 24px;
+            vertical-align: middle
+        }
+
+        .button {
+            font-size: 14px;
+            height: 30px;
+            margin-right: 10px;
+            vertical-align: middle;
+            background: #FAFAFA;
+            cursor: pointer;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, .1);
+            position: relative;
+            line-height: 30px;
+            text-align: center;
+            display: inline-block;
+            box-sizing: content-box;
+            outline: 0;
+            font-weight: 700;
+            padding: 0 15px;
+            border: 1px solid #5F5F5F;
+            border-radius: 3px
+        }
+
+        .button:active,
+        .button:hover,
+        .iconButton:hover {
+            color: #fafafa;
+            background: #5f5f5f;
+        }
+
+        .button.disabled,
+        .button:disabled,
+        .iconButton.disabled,
+        .iconButton:disabled {
+            pointer-events: none;
+            cursor: default;
+            color: #bbb;
+            border-color: #bbb;
+            background: #fafafa;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="javascript:;" id="select_dealer" class="select-dealer button">批量添加供应商</a>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./src/js/jquery.dialog.js"></script>
+    <script type="text/javascript" src="./src/js/jquery.multiSelect.js"></script>
+    <script>
+        $('#select_dealer').on('click', function () {
+            MultiSelect({
+                title: '供应商选择',
+                url: 'dealer_select.jhtml',
+                itemName: '供应商',
+                //列表的th 属性名和后台ajax返回相同,属性值自定义
+                tabRows: {
+                    dealerName: '名称',
+                    dealerSn: '编号',
+                },
+                //再次编辑时传入已选择的id
+                pickedIds: null,
+                extendSearchParams: '<input type="text" class="text searchParams" name="q" id="keyword" placeholder="请输入编号或名称搜索" style="width:175px;"/>',
+                requestMethod: 'post',
+                //创建弹窗前的判断 返回true false
+                beforeCreateFunction: function () {
+                    // $("#areaId").valid();
+                    // if(!!!($("#areaId").val())){
+                    //     $.message("warn","请先选择适用区域");
+                    //     return false;
+                    // }
+                    return true;
+                },
+                //请求的额外参数
+                //requestParams : {
+                //},
+                //关闭弹窗返回选中的id
+                onDialogConfirm: function (ids, data) {
+                },
+            });
+        });
+    </script>
+</body>
+
+</html>
